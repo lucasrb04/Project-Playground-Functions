@@ -16,13 +16,17 @@ function splitSentence(phrase) {
 
 // Desafio 4
 function concatName(stringArray) {
-  let lastAndFirst = stringArray[stringArray.leght - 1] + ', ' + stringArray[0];
+  let splittedPhrase = stringArray.split(' ');
+  let last = splittedPhrase[splittedPhrase.length - 1];
+  let first = splittedPhrase[0];
+  let lastAndFirst = `${last}, ${first}`;
   return (lastAndFirst);
 }
 
 // Desafio 5
-function footballPoints() {
-  // seu código aqui
+function footballPoints(wins, ties) {
+  let points = (wins * 3) + ties;
+  return points;
 }
 
 // Desafio 6
