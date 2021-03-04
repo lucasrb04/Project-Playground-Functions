@@ -1,11 +1,11 @@
 // Desafio 1
 function compareTrue(valorBoleeano1, valorBoleano2) {
-  return(valorBoleeano1 && valorBoleano2);
+  return (valorBoleeano1 && valorBoleano2);
 }
 
 // Desafio 2
 function calcArea(base, height) {
-  let area = base * altura / 2;
+  let area = (base * height) / 2;
   return (area);
 }
 
