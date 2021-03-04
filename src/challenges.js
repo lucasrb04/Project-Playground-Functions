@@ -1,6 +1,6 @@
 // Desafio 1
-function compareTrue(valorBoleeano1, valorBoleano2) {
-  return (valorBoleeano1 && valorBoleano2);
+function compareTrue(boolValue1, boolvalue2) {
+  return (boolValue1 && boolvalue2);
 }
 
 // Desafio 2
@@ -10,13 +10,14 @@ function calcArea(base, height) {
 }
 
 // Desafio 3
-function splitSentence(frase) {
-  return frase.split(' ');
+function splitSentence(phrase) {
+  return (phrase.split(' '));
 }
 
 // Desafio 4
-function concatName() {
-  // seu código aqui
+function concatName(stringArray) {
+  let lastAndFirst = stringArray[stringArray.leght - 1] + ', ' + stringArray[0];
+  return (lastAndFirst);
 }
 
 // Desafio 5
