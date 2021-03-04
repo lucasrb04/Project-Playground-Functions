@@ -1,12 +1,12 @@
-let bool1 = false;
-let bool2 = false;
-function compareTrue(bool1, bool2) {
-  return(bool1 && bool2)
+// Desafio 1
+function compareTrue(valorBoleeano1, valorBoleano2) {
+  return(valorBoleeano1 && valorBoleano2);
 }
-console.log(compareTrue(bool1, bool2))
+
 // Desafio 2
-function calcArea() {
-  // seu código aqui
+function calcArea(base, height) {
+  let area = base * altura / 2;
+  return (area);
 }
 
 // Desafio 3
