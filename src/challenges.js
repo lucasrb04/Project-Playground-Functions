@@ -50,6 +50,7 @@ function highestCount(score) {
   }
   return count;
 }
+
 // Desafio 7
 function catAndMouse(mouse, cat1, cat2) {
   let dist1 = Math.abs(cat1 - mouse);
@@ -64,24 +65,44 @@ function catAndMouse(mouse, cat1, cat2) {
     return ('os gatos trombam e o rato foge');
   }
 }
+
 // Desafio 8
+// function fb(number) {
+//   let value;
+//   if (number % 3 === 0 && number % 5 === 0) {
+//     value = 'fizzBuzz';
+//   } else if (number % 3 === 0) {
+//     value = 'fizz';
+//   } else if (number % 5 === 0) {
+//     value = 'buzz';
+//   } else if (number % 3 !== 0 && number % 5 !== 0) {
+//     value = 'bug!';
+//   }
+//   return value;
+// }
+function fb(number) {
+  let value = '';
+  if (number % 3 === 0) {
+    value = value.concat('fizz');
+  }
+  if (number % 5 === 0) {
+    value = value.concat('buzz');
+  }
+  if (number % 3 !== 0 && number % 5 !== 0) {
+    value = 'bug!';
+  }
+  return value;
+}
+
 function fizzBuzz(numberArray) {
   let result = [];
-  for (let i in numberArray) {
-    // if (numberArray[i] % 3 === 0 && numberArray[i] % 5 === 0) {
-    //   result.push("fizzBuzz");
-    // }
-    if (numberArray[i] % 3 === 0) {
-      result.push("fizz");
-    } 
-    if (numberArray[i] % 5 === 0) {
-      result.push("buzz");
-    } else if(numberArray[i] % 3 !== 0 && numberArray[i] % 5 !== 0 ) {
-      result.push("bug!");
-    }
+  for (let i = 0; i < numberArray.length; i += 1) {
+    result.push(fb(numberArray[i]));
   }
   return result;
 }
+
+console.log(fizzBuzz([1, 2, 3, 4, 5, 6, 15]));
 
 // Desafio 9
 function encode() {
