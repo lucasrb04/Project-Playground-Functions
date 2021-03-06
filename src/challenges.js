@@ -67,46 +67,30 @@ function catAndMouse(mouse, cat1, cat2) {
 }
 
 // Desafio 8
-// function fb(number) {
-//   let value;
-//   if (number % 3 === 0 && number % 5 === 0) {
-//     value = 'fizzBuzz';
-//   } else if (number % 3 === 0) {
-//     value = 'fizz';
-//   } else if (number % 5 === 0) {
-//     value = 'buzz';
-//   } else if (number % 3 !== 0 && number % 5 !== 0) {
-//     value = 'bug!';
-//   }
-//   return value;
-// }
-function fb(number) {
-  let value = '';
+function comparator(number) {
+  if (number % 3 === 0 && number % 5 === 0) {
+    return 'fizzBuzz';
+  }
   if (number % 3 === 0) {
-    value = value.concat('fizz');
+    return 'fizz';
   }
   if (number % 5 === 0) {
-    value = value.concat('buzz');
+    return 'buzz';
   }
-  if (number % 3 !== 0 && number % 5 !== 0) {
-    value = 'bug!';
-  }
-  return value;
+  return 'bug!';
 }
 
 function fizzBuzz(numberArray) {
   let result = [];
   for (let i = 0; i < numberArray.length; i += 1) {
-    result.push(fb(numberArray[i]));
+    result.push(comparator(numberArray[i]));
   }
   return result;
 }
 
-console.log(fizzBuzz([1, 2, 3, 4, 5, 6, 15]));
-
 // Desafio 9
 function encode() {
-  // seu código aqui
+
 }
 function decode() {
   // seu código aqui
