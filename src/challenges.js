@@ -12,7 +12,7 @@ function calcArea(base, height) {
 
 // Desafio 3
 function splitSentence(phrase) {
-  return (phrase.split(''));
+  return (phrase.split(' '));
 }
 
 // Desafio 4
@@ -90,7 +90,9 @@ function fizzBuzz(numberArray) {
 }
 
 // // Desafio 9
-
+function splitString(string) {
+  return string.split('');
+}
 function changeVowel(vowel) {
   let vowels = ['a', 'e', 'i', 'o', 'u'];
   for (let i = 0; i < vowels.length; i += 1) {
@@ -110,7 +112,7 @@ function changeNumber(number) {
 }
 
 function encode(string) {
-  let splitedInput = splitSentence(string);
+  let splitedInput = splitString(string);
   for (let index = 0; index < splitedInput.length; index += 1) {
     if (typeof changeVowel(splitedInput[index]) === 'number') {
       splitedInput[index] = changeVowel(splitedInput[index]);
@@ -119,7 +121,7 @@ function encode(string) {
   return splitedInput.join('');
 }
 function decode(string) {
-  let splitedInput = splitSentence(string);
+  let splitedInput = splitString(string);
   for (let index = 0; index < splitedInput.length; index += 1) {
     if (typeof changeNumber(splitedInput[index]) === 'string') {
       splitedInput[index] = changeNumber(splitedInput[index]);
