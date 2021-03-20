@@ -1,3 +1,4 @@
+/* eslint-disable complexity */
 // Desafio 1
 function compareTrue(boolValue1, boolvalue2) {
   return (boolValue1 && boolvalue2);
@@ -87,9 +88,9 @@ function fizzBuzz(numberArray) {
   }
   return result;
 }
-
-// Desafio 9
-function encode(string) {
+console.log(fizzBuzz([2, 15, 7, 9, 45]));
+// // Desafio 9
+// function encode(string) {
 //   for (let i = 0; i < string.length; i += 1) {
 //     if (string[i] === 'a') {
 //       return '1';
@@ -108,17 +109,33 @@ function encode(string) {
 //     }
 //   }
 // }
-function decode() {
-  // seu código aqui
-}
+// function decode(string) {
+//   for (let i = 0; i < string.length; i += 1) {
+//     if (string[i] === '1') {
+//       return 'a';
+//     }
+//     if (string[i] === '2') {
+//       return 'e';
+//     }
+//     if (string[i] === '3') {
+//       return 'i';
+//     }
+//     if (string[i] === '4') {
+//       return 'o';
+//     }
+//     if (string[i] === '5') {
+//       return 'u';
+//     }
+//   }
+// }
 
 module.exports = {
   calcArea,
   catAndMouse,
   compareTrue,
   concatName,
-  decode,
-  encode,
+  // decode,
+  // encode,
   fizzBuzz,
   footballPoints,
   highestCount,
