@@ -12,7 +12,7 @@ function calcArea(base, height) {
 
 // Desafio 3
 function splitSentence(phrase) {
-  return (phrase.split(' '));
+  return (phrase.split(''));
 }
 
 // Desafio 4
@@ -88,27 +88,47 @@ function fizzBuzz(numberArray) {
   }
   return result;
 }
-console.log(fizzBuzz([2, 15, 7, 9, 45]));
+
 // // Desafio 9
+
+function changeVowel(vowel) {
+  let vowels = ['a', 'e', 'i', 'o', 'u'];
+  for (let i = 0; i < vowels.length; i += 1) {
+    if (vowel === vowels[i]) {
+      return ((i + 1));
+    }
+  }
+}
+
+function encode(string) {
+  let splitedInput = splitSentence(string);
+  console.log(splitedInput);
+  for (let index = 0; index < splitedInput.length; index += 1) {
+    console.log(splitedInput[index]);
+    if (typeof changeVowel(splitedInput[index]) === 'number') {
+      console.log(splitedInput[index]);
+      console.log(changeVowel(splitedInput[index]));
+      splitedInput[index] = changeVowel(splitedInput[index]);
+    }
+  }
+  return splitedInput.join('');
+}
+console.log(encode('hi there!'));
 // function encode(string) {
-//   for (let i = 0; i < string.length; i += 1) {
-//     if (string[i] === 'a') {
-//       return '1';
-//     }
-//     if (string[i] === 'e') {
-//       return '2';
-//     }
-//     if (string[i] === 'i') {
-//       return '3';
-//     }
-//     if (string[i] === 'o') {
-//       return '4';
-//     }
-//     if (string[i] === 'u') {
-//       return '5';
-//     }
-//   }
+
+// if (string[i] === 'e') {
+//   return '2';
 // }
+// if (string[i] === 'i') {
+//   return '3';
+// }
+// if (string[i] === 'o') {
+//   return '4';
+// }
+// if (string[i] === 'u') {
+//   return '5';
+// }
+
 // function decode(string) {
 //   for (let i = 0; i < string.length; i += 1) {
 //     if (string[i] === '1') {
