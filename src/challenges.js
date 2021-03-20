@@ -95,67 +95,46 @@ function changeVowel(vowel) {
   let vowels = ['a', 'e', 'i', 'o', 'u'];
   for (let i = 0; i < vowels.length; i += 1) {
     if (vowel === vowels[i]) {
-      return ((i + 1));
+      return (i + 1);
+    }
+  }
+}
+function changeNumber(number) {
+  let vowels = ['a', 'e', 'i', 'o', 'u'];
+  let numberDecode = ['1', '2', '3', '4', '5'];
+  for (let i = 0; i < numberDecode.length; i += 1) {
+    if (number === numberDecode[i]) {
+      return (vowels[i]);
     }
   }
 }
 
 function encode(string) {
   let splitedInput = splitSentence(string);
-  console.log(splitedInput);
   for (let index = 0; index < splitedInput.length; index += 1) {
-    console.log(splitedInput[index]);
     if (typeof changeVowel(splitedInput[index]) === 'number') {
-      console.log(splitedInput[index]);
-      console.log(changeVowel(splitedInput[index]));
       splitedInput[index] = changeVowel(splitedInput[index]);
     }
   }
   return splitedInput.join('');
 }
-console.log(encode('hi there!'));
-// function encode(string) {
-
-// if (string[i] === 'e') {
-//   return '2';
-// }
-// if (string[i] === 'i') {
-//   return '3';
-// }
-// if (string[i] === 'o') {
-//   return '4';
-// }
-// if (string[i] === 'u') {
-//   return '5';
-// }
-
-// function decode(string) {
-//   for (let i = 0; i < string.length; i += 1) {
-//     if (string[i] === '1') {
-//       return 'a';
-//     }
-//     if (string[i] === '2') {
-//       return 'e';
-//     }
-//     if (string[i] === '3') {
-//       return 'i';
-//     }
-//     if (string[i] === '4') {
-//       return 'o';
-//     }
-//     if (string[i] === '5') {
-//       return 'u';
-//     }
-//   }
-// }
+function decode(string) {
+  let splitedInput = splitSentence(string);
+  for (let index = 0; index < splitedInput.length; index += 1) {
+    if (typeof changeNumber(splitedInput[index]) === 'string') {
+      splitedInput[index] = changeNumber(splitedInput[index]);
+    }
+  }
+  return splitedInput.join('');
+}
 
 module.exports = {
   calcArea,
   catAndMouse,
   compareTrue,
   concatName,
-  // decode,
-  // encode,
+  decode,
+  encode,
   fizzBuzz,
   footballPoints,
   highestCount,
