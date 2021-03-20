@@ -18,36 +18,54 @@ function techList(array, string) {
   return result;
 }
 
-// // Desafio 11
-// function timesRepeated(number, numberArray) {
-//   let count = 0;
-//   for (let i in numberArray) {
-//     if (number === numberArray[i]) {
-//       count += 1;
-//     }
-//   }
-//   return count;
-// }
-// function tooRepeated(numberArray) {
-//   let count = 0;
-//   for (let i in numberArray) {
-//     if (count < timesRepeated(numberArray[i], numberArray)) {
-//       count = timesRepeated(numberArray[i], numberArray);
-//     }
-//   }
-//   if (count)
-//   return count;
-// }
-// function generatePhoneNumber(numberArray) {
-//   let result = '';
-//   if (numberArray.length !== 11) {
-//     result = 'Array com tamanho incorreto.';
-//   } else if (tooRepeated(numberArray)) {
-//     result = 'não é possível gerar um número de telefone com esses valores';
-//   }
-// }
+// Desafio 11
+function timesRepeated(number, numberArray) {
+  let count = 0;
+  for (let i in numberArray) {
+    if (number === numberArray[i]) {
+      count += 1;
+    }
+  }
+  return count;
+}
+function tooRepeated(numberArray) {
+  let count = 0;
+  let result = 0;
+  for (let i in numberArray) {
+    if (count < timesRepeated(numberArray[i], numberArray)) {
+      count = timesRepeated(numberArray[i], numberArray);
+    }
+  }
+  if (count >= 3) {
+    result = true;
+  } else {
+    result = false;
+  }
+  return result;
+}
 
-// console.log(tooRepeated([1, 2, 3, 4, 2, 2, 2]));
+function outOfBundary(numberArray) {
+  let out = 0;
+  for (let i in numberArray) {
+    if (numberArray[i] > 9 || numberArray[i] < 0) {
+      out += 1;
+    }
+  }
+  return out;
+}
+function generatePhoneNumber(numberArray) {
+  let result = '';
+  if (numberArray.length !== 11) {
+    result = 'Array com tamanho incorreto.';
+  } else if (tooRepeated(numberArray) || outOfBundary(numberArray) > 0) {
+    result = 'não é possível gerar um número de telefone com esses valores';
+  } else {
+    result = `(${numberArray[0]}${numberArray[1]}) ${numberArray[2]}${numberArray[3]}${numberArray[4]}${numberArray[5]}${numberArray[6]}-${numberArray[7]}${numberArray[8]}${numberArray[9]}${numberArray[10]}`;
+  }
+  return result;
+}
+
+console.log(generatePhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1]));
 // Desafio 12
 function triangleCheck() {
   // seu código aqui
