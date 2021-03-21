@@ -100,10 +100,16 @@ function hydrate(phrase) {
   let reg = /\d+/g;
   let result = phrase.match(reg);
   let soma = 0;
+  let text = '';
   for (let index = 0; index < result.length; index += 1) {
     soma += parseInt(result[index]);
   }
-  return `${soma} copos de água`;
+  if (soma === 1) {
+    text = `${soma} copo de água`;
+  } else {
+    text = `${soma} copos de água`;
+  }
+  return text;
 }
 module.exports = {
   generatePhoneNumber,
