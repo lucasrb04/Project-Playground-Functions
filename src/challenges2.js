@@ -80,9 +80,9 @@ function compareSum(lineA, lineB, lineC) {
 function compareAbs(lineA, lineB, lineC) {
   let bc = Math.abs(lineB - lineC);
 
-  let ab = Math.abs(lineA + lineB);
+  let ab = Math.abs(lineA - lineB);
 
-  let ac = Math.abs(lineA + lineC);
+  let ac = Math.abs(lineA - lineC);
   if (lineA > bc && lineB > ac && lineC > ab) {
     return true;
   }
