@@ -67,8 +67,32 @@ function generatePhoneNumber(numberArray) {
 
 console.log(generatePhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1]));
 // Desafio 12
-function triangleCheck() {
-  // seu código aqui
+function compareSum(lineA, lineB, lineC) {
+  let bc = lineB + lineC;
+
+  let ab = lineA + lineB;
+
+  let ac = lineA + lineC;
+  if (lineA < bc && lineB < ac && lineC < ab) {
+    return true;
+  }
+}
+function compareAbs(lineA, lineB, lineC) {
+  let bc = Math.abs(lineB - lineC);
+
+  let ab = Math.abs(lineA + lineB);
+
+  let ac = Math.abs(lineA + lineC);
+  if (lineA > bc && lineB > ac && lineC > ab) {
+    return true;
+  }
+}
+function triangleCheck(lineA, lineB, lineC) {
+  let result = false;
+  if (compareAbs(lineA, lineB, lineC) && compareSum(lineA, lineB, lineC)) {
+    result = true;
+  }
+  return result;
 }
 
 // Desafio 13
