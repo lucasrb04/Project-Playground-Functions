@@ -65,7 +65,6 @@ function generatePhoneNumber(numberArray) {
   return result;
 }
 
-console.log(generatePhoneNumber([1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1]));
 // Desafio 12
 function compareSum(lineA, lineB, lineC) {
   let bc = lineB + lineC;
@@ -96,10 +95,17 @@ function triangleCheck(lineA, lineB, lineC) {
 }
 
 // Desafio 13
-function hydrate() {
+function hydrate(phrase) {
   // seu código aqui
+  let reg = /\d+/g;
+  let result = phrase.match(reg);
+  let soma = 0;
+  for (let index = 0; index < result.length; index += 1) {
+    console.log(result);
+    soma += parseInt(result[index]);
+  }
+  return `${soma} copos de água`;
 }
-
 module.exports = {
   generatePhoneNumber,
   techList,
