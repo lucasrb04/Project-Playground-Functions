@@ -101,7 +101,6 @@ function hydrate(phrase) {
   let result = phrase.match(reg);
   let soma = 0;
   for (let index = 0; index < result.length; index += 1) {
-    console.log(result);
     soma += parseInt(result[index]);
   }
   return `${soma} copos de água`;
