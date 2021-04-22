@@ -113,12 +113,10 @@ function changeNumber(number) {
 
 function encode(string) {
   let splitedInput = splitString(string);
-  splitedInput.forEach((letter) => {
-    if (typeof changeVowel(letter) === 'number') {
-      letter = changeVowel(letter);
-    }
-  });
-  return splitedInput.join('');
+  const text = splitedInput.map((letter) => (
+    (typeof changeVowel(letter) === 'number') ? changeVowel(letter) : letter
+  ));
+  return text.join('');
 }
 
 function decode(string) {
@@ -136,6 +134,8 @@ module.exports = {
   catAndMouse,
   compareTrue,
   concatName,
+  changeVowel,
+  changeNumber,
   decode,
   encode,
   fizzBuzz,
