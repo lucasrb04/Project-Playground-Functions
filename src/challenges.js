@@ -113,13 +113,14 @@ function changeNumber(number) {
 
 function encode(string) {
   let splitedInput = splitString(string);
-  for (let index = 0; index < splitedInput.length; index += 1) {
-    if (typeof changeVowel(splitedInput[index]) === 'number') {
-      splitedInput[index] = changeVowel(splitedInput[index]);
+  splitedInput.forEach((letter) => {
+    if (typeof changeVowel(letter) === 'number') {
+      letter = changeVowel(letter);
     }
-  }
+  });
   return splitedInput.join('');
 }
+
 function decode(string) {
   let splitedInput = splitString(string);
   for (let index = 0; index < splitedInput.length; index += 1) {
