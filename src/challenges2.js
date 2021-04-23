@@ -1,19 +1,12 @@
 // Desafio 10
-function techList(array, string) {
-  const orderedArray = array.sort();
-  let result = '';
-  if (array.length < 1) {
-    result = 'Vazio!';
-  } else {
-    let objectArray = [];
-    for (let index = 0; index < array.length; index += 1) {
-      let myObject = {
-        tech: orderedArray[index],
-        name: string,
-      };
-      objectArray.push(myObject);
-    }
-    result = objectArray;
+
+function techList(arrayList, name) {
+  let result = 'Vazio!';
+  if (arrayList.length > 1) {
+    result = arrayList.sort().map((tech) => ({
+      tech,
+      name,
+    }));
   }
   return result;
 }
@@ -53,14 +46,14 @@ function outOfBundary(numberArray) {
   }
   return out;
 }
-function generatePhoneNumber(numberArray) {
+function generatePhoneNumber(n) {
   let result = '';
-  if (numberArray.length !== 11) {
+  if (n.length !== 11) {
     result = 'Array com tamanho incorreto.';
-  } else if (tooRepeated(numberArray) || outOfBundary(numberArray) > 0) {
+  } else if (tooRepeated(n) || outOfBundary(n) > 0) {
     result = 'não é possível gerar um número de telefone com esses valores';
   } else {
-    result = `(${numberArray[0]}${numberArray[1]}) ${numberArray[2]}${numberArray[3]}${numberArray[4]}${numberArray[5]}${numberArray[6]}-${numberArray[7]}${numberArray[8]}${numberArray[9]}${numberArray[10]}`;
+    result = `(${n[0]}${n[1]}) ${n[2]}${n[3]}${n[4]}${n[5]}${n[6]}-${n[7]}${n[8]}${n[9]}${n[10]}`;
   }
   return result;
 }
