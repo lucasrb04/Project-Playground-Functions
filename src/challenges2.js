@@ -1,5 +1,4 @@
 // Desafio 10
-
 function techList(arrayList, name) {
   let result = 'Vazio!';
   if (arrayList.length > 1) {
@@ -88,21 +87,14 @@ function triangleCheck(lineA, lineB, lineC) {
 }
 
 // Desafio 13
+
 function hydrate(phrase) {
   // seu código aqui
+  // regular espression - /  / é o simbolo para a expressão, \d procura um número, + se tem mais de 1 numero junto, pois se tiver, ele pega ele inteiro, ao inves de separar os dígitos e o g faz uma busca em toda a string ao inves de parar no primeiro encontro.
   let reg = /\d+/g;
-  let result = phrase.match(reg);
-  let soma = 0;
-  let text = '';
-  for (let index = 0; index < result.length; index += 1) {
-    soma += +(result[index]);
-  }
-  if (soma === 1) {
-    text = `${soma} copo de água`;
-  } else {
-    text = `${soma} copos de água`;
-  }
-  return text;
+  let stringArray = phrase.match(reg);
+  const soma = stringArray.reduce((sum, number) => sum + +number, 0);
+  return soma === 1 ? `${soma} copo de água` : `${soma} copos de água`;
 }
 module.exports = {
   generatePhoneNumber,
