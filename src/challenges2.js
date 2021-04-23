@@ -90,7 +90,7 @@ function triangleCheck(lineA, lineB, lineC) {
 
 function hydrate(phrase) {
   // seu código aqui
-  // regular espression - /  / é o simbolo para a expressão, \d procura um número, + se tem mais de 1 numero junto, pois se tiver, ele pega ele inteiro, ao inves de separar os dígitos e o g faz uma busca em toda a string ao inves de parar no primeiro encontro.
+  // regular expression - /  / é o simbolo para a expressão, \d procura um número, + se tem mais de 1 numero junto, pois se tiver, ele pega ele inteiro, ao inves de separar os dígitos e o g faz uma busca em toda a string ao inves de parar no primeiro encontro.
   let reg = /\d+/g;
   let stringArray = phrase.match(reg);
   const soma = stringArray.reduce((sum, number) => sum + +number, 0);
